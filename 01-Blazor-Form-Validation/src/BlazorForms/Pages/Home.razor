@@ -1,0 +1,33 @@
+﻿@page "/"
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+<EditForm Model="@Model" OnValidSubmit="OnValidSubmit">
+	<div class="mb-3">
+		<InputText @bind-Value="@Model.Name" />
+	</div>
+
+	<button type="submit" >Save</button>
+</EditForm>
+
+@code {
+
+	public Student Model { get; set; } = new();
+
+	public void OnValidSubmit()
+	{
+		// About blazor's EditForm attributes, we have: 
+		// - OnSubmit
+		// - OnInvalidSubmit: Acts like a hook. It's called whenever the values are invalid on submit
+		// - OnValidSubmit
+	}
+
+	public class Student
+	{
+		public int Id { get; set; }
+		public string Name { get; set; } = string.Empty;
+	}
+}
+
