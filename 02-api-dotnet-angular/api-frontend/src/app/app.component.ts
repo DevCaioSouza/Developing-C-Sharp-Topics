@@ -11,11 +11,11 @@ import { Player } from './models/player';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
 
-  ngOnInit(): void {
-    this.getPlayerList();
-  }
+  // ngOnInit(): void {
+  //   this.getPlayerList();
+  // }
 
   title = 'api-frontend';
 
