@@ -1,4 +1,22 @@
-<p>
-  <button (click)="getPlayerList()">Get Players</button>
-  {{ playerList | json }}
-</p>
+<div class="playerTable">
+  <button (click)="getPlayerList()">Get Players</button> <br /><br />
+
+  <table ngSkipHydration>
+    <tr>
+      <th>Name</th>
+      <th>Id</th>
+    </tr>
+    <tr *ngFor="let player of playerList$ | async">
+      <td>{{ player.name }}</td>
+      <td>{{ player.id }}</td>
+    </tr>
+  </table>
+</div>
+
+<!-- <p *ngIf="shouldSayHello" >Hello World</p> -->
+
+<button (click)="switchHello()">Show / Hide</button>
+
+<ng-template [ngIf]="shouldSayHello">
+  <p>Hello World</p>
+</ng-template>
