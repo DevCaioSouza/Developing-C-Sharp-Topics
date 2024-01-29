@@ -10,7 +10,7 @@ using MyTodoApp.Data;
 namespace MyTodoApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240128201100_InitialCreation")]
+    [Migration("20240128213721_InitialCreation")]
     partial class InitialCreation
     {
         /// <inheritdoc />
@@ -29,7 +29,6 @@ namespace MyTodoApp.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
